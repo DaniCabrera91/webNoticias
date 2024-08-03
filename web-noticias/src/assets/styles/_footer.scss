@@ -1,0 +1,43 @@
+@import './variables';
+
+.footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .footer__link {
+    color: $accent-color;
+    text-decoration: none;
+    margin: 0.5rem 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .footer__text {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .footer__button {
+    display: flex;
+    vertical-align: middle;
+    background-color: $accent-color;
+    color: $secondary-color;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $muted-text-color;
+    }
+  }
+}

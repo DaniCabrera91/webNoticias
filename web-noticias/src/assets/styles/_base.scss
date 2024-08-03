@@ -1,0 +1,50 @@
+@import './variables';
+
+.header, .footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 1rem;
+}
+
+.header__title {
+  font-size: 2rem;
+  color: $secondary-color;
+}
+
+.navbar {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $accent-color;
+      color: $secondary-color;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  p {
+    margin-top: 0.5rem;
+  }
+
+  a {
+    color: $accent-color;
+  }
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1rem;
+}

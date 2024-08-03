@@ -1,0 +1,15 @@
+@import "_variables.scss";
+
+.header {
+  background-color: $primary-color;
+  padding: 20px;
+  
+  h1 {
+    margin: 0;
+    color: $secondary-color;
+  }
+  
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}

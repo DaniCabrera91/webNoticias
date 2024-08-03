@@ -1,23 +1,19 @@
-function Footer() {
+import React from 'react';
+
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://developer.nytimes.com" target="_blank" rel="noopener noreferrer">
-              Developer API
-            </a>
-          </li>
-          <li>
-            <a href="/" target="_blank" rel="noopener noreferrer">Home</a>
-          </li>
-        </ul>
-      </nav>
-      <p>&copy; 2024 The News App</p>
-      <a href="https://github.com/DaniCabrera91" target="_blank" rel="noopener noreferrer">By Dani Cabrera</a>
-      
+    <footer className="footer">
+      <a href="https://developer.nytimes.com" target="_blank" rel="noopener noreferrer" className="footer__link">Developer API</a>
+      <p className="footer__text">&copy; 2024 The News App</p>
+      <a href="https://github.com/DaniCabrera91" target="_blank" rel="noopener noreferrer" className="footer__link">By Dani Cabrera</a>
+      <button className="footer__button" onClick={scrollToTop}>Volver arriba</button>
     </footer>
   );
-}
+};
 
 export default Footer;
+

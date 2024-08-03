@@ -22,7 +22,6 @@ function NewsForm({ addNews }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Validación básica para campos requeridos
     if (!formData.title || !formData.abstract || !formData.byline) {
       alert('Por favor, completa todos los campos obligatorios.');
       return;
@@ -36,38 +35,64 @@ function NewsForm({ addNews }) {
     localStorage.setItem('news', JSON.stringify(storedNews));
 
     if (addNews) {
-      addNews(updatedFormData); // Pasa los datos con el byline actualizado
+      addNews(updatedFormData);
     }
 
     setTimeout(() => {
-      navigate('/news')
-    }, 1000)
- 
-  }
+      navigate('/news');
+    }, 1000);
+  };
 
   return (
-    <div>
-      <h2>Crear Noticia</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Título: <span style={{ color: 'red' }}>*</span>
-          <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+    <div className="news-form">
+      <h2 className="news-form__title">Crear Noticia</h2>
+      <form className="news-form__form" onSubmit={handleSubmit}>
+        <label className="news-form__label">
+          Título: <span className="news-form__required">*</span>
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            className="news-form__input"
+          />
         </label>
-        <label>
-          Resumen: <span style={{ color: 'red' }}>*</span>
-          <input type="text" name="abstract" value={formData.abstract} onChange={handleChange} required />
+        <label className="news-form__label">
+          Resumen: <span className="news-form__required">*</span>
+          <input
+            type="text"
+            name="abstract"
+            value={formData.abstract}
+            onChange={handleChange}
+            required
+            className="news-form__input"
+          />
         </label>
-        <label>
-          Autor: <span style={{ color: 'red' }}>*</span>
-          <input type="text" name="byline" value={formData.byline} onChange={handleChange} required />
+        <label className="news-form__label">
+          Autor: <span className="news-form__required">*</span>
+          <input
+            type="text"
+            name="byline"
+            value={formData.byline}
+            onChange={handleChange}
+            required
+            className="news-form__input"
+          />
         </label>
-        <label>
+        <label className="news-form__label">
           Fecha de Publicación:
-          <input type="date" name="published_date" value={formData.published_date} onChange={handleChange} />
+          <input
+            type="date"
+            name="published_date"
+            value={formData.published_date}
+            onChange={handleChange}
+            className="news-form__input"
+          />
         </label>
-        <button type="submit">Publicar Noticia</button>
+        <button type="submit" className="news-form__button">Publicar Noticia</button>
       </form>
-      <p>* Campos obligatorios</p>
+      <p className="news-form__info">* Campos obligatorios</p>
     </div>
   );
 }

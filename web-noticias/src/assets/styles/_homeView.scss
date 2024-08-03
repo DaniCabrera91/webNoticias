@@ -1,0 +1,31 @@
+@import './variables';
+
+.homeview {
+    h2 {
+      color: $muted-text-color;
+      margin: 1rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      background-color: $background-dark-color;
+      margin: 1rem;
+  
+      li {
+        background-color: $secondary-color;
+        border-radius: $border-radius;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        h3 {
+          color: $primary-color;
+        }
+  
+        p {
+          color: $muted-text-color;
+        }
+      }
+    }
+  }

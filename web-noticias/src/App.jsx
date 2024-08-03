@@ -5,25 +5,23 @@ import TheFooter from './components/footer/TheFooter';
 import Home from './views/HomeView';
 import Contact from './views/ContactView';
 import News from './views/ListNewsView';
-import { NewsProvider } from './context/NewsContext';
+import { GlobalProvider } from './context/GlobalState';
+import './styles.scss';
 
 function App() {
   return (
-    <NewsProvider>
+    <GlobalProvider>
       <BrowserRouter>
         <TheHeader />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Contact />} /> 
+          <Route path="/form" element={<Contact />} />
           <Route path="/news" element={<News />} />
         </Routes>
         <TheFooter />
       </BrowserRouter>
-    </NewsProvider>
+    </GlobalProvider>
   );
 }
 
 export default App;
-
-
-
