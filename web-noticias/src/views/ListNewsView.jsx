@@ -1,29 +1,29 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { GlobalState } from '../context/GlobalState';
+import React, { useContext, useEffect, useState } from 'react'
+import { GlobalState } from '../context/GlobalState'
 
 function ListNewsView() {
-  const { news, error, addNews } = useContext(GlobalState);
+  const { news, error, addNews } = useContext(GlobalState)
 
-  console.log('news:', news);
-  console.log('error:', error);
+  console.log('news:', news)
+  console.log('error:', error)
 
-  const [localNews, setLocalNews] = useState([]);
-  const [allNews, setAllNews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [localNews, setLocalNews] = useState([])
+  const [allNews, setAllNews] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const storedNews = localStorage.getItem('news') ? JSON.parse(localStorage.getItem('news')) : [];
-    setLocalNews(storedNews);
-    setAllNews([...news, ...storedNews]);
-    setIsLoading(false);
-  }, [news]);
+    const storedNews = localStorage.getItem('news') ? JSON.parse(localStorage.getItem('news')) : []
+    setLocalNews(storedNews)
+    setAllNews([...news, ...storedNews])
+    setIsLoading(false)
+  }, [news])
 
   if (isLoading) {
-    return <div className="loading">Loading news...</div>;
+    return <div className="loading">Loading news...</div>
   }
 
   if (error) {
-    return <div className="error">Error loading news: {error}</div>;
+    return <div className="error">Error loading news: {error}</div>
   }
 
   return (
@@ -43,4 +43,4 @@ function ListNewsView() {
   );
 }
 
-export default ListNewsView;
+export default ListNewsView

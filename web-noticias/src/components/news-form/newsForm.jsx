@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function NewsForm({ addNews }) {
   const [formData, setFormData] = useState({
@@ -8,40 +8,40 @@ function NewsForm({ addNews }) {
     byline: '',
     published_date: new Date().toISOString().slice(0, 10),
     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
-  });
+  })
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     if (!formData.title || !formData.abstract || !formData.byline) {
-      alert('Por favor, completa todos los campos obligatorios.');
-      return;
+      alert('Por favor, completa todos los campos obligatorios.')
+      return
     }
 
-    const updatedByline = `By ${formData.byline}`;
-    const updatedFormData = { ...formData, byline: updatedByline };
+    const updatedByline = `By ${formData.byline}`
+    const updatedFormData = { ...formData, byline: updatedByline }
 
-    const storedNews = JSON.parse(localStorage.getItem('news')) || [];
-    storedNews.push(updatedFormData);
-    localStorage.setItem('news', JSON.stringify(storedNews));
+    const storedNews = JSON.parse(localStorage.getItem('news')) || []
+    storedNews.push(updatedFormData)
+    localStorage.setItem('news', JSON.stringify(storedNews))
 
     if (addNews) {
-      addNews(updatedFormData);
+      addNews(updatedFormData)
     }
 
     setTimeout(() => {
-      navigate('/news');
-    }, 1000);
-  };
+      navigate('/news')
+    }, 1000)
+  }
 
   return (
     <div className="news-form">
@@ -94,7 +94,7 @@ function NewsForm({ addNews }) {
       </form>
       <p className="news-form__info">* Campos obligatorios</p>
     </div>
-  );
+  )
 }
 
-export default NewsForm;
+export default NewsForm

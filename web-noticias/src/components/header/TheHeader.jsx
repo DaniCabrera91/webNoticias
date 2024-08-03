@@ -1,5 +1,5 @@
-import React from 'react';
-import NavBar from '../nav-bar/navBar';
+import React from 'react'
+import NavBar from '../nav-bar/navBar'
 
 const TheHeader = () => {
   return (
@@ -7,7 +7,7 @@ const TheHeader = () => {
       <h1 className="header__title">The News App</h1>
       <NavBar />
     </header>
-  );
+  )
 }
 
-export default TheHeader;
+export default TheHeader

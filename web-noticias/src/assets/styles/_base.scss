@@ -1,5 +1,11 @@
 @import './variables';
 
+body {
+  font-family: $font-family-base;
+  background-color: $background-dark-color;
+  width:100%;
+}
+
 .header, .footer {
   background-color: $primary-color;
   color: $secondary-color;
@@ -44,7 +50,7 @@
 }
 
 .container {
-  max-width: $max-width;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
 }

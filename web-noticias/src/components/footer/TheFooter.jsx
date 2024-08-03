@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <footer className="footer">
@@ -12,8 +12,8 @@ const Footer = () => {
       <a href="https://github.com/DaniCabrera91" target="_blank" rel="noopener noreferrer" className="footer__link">By Dani Cabrera</a>
       <button className="footer__button" onClick={scrollToTop}>Volver arriba</button>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
 

@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: $muted-text-color;
+  background-color: $background-color;
   border-radius: $border-radius;
 
   &__form {
@@ -21,6 +21,7 @@
     flex-direction: column;
     margin-bottom: 1rem;
     font-weight: bold;
+
 
     &__required {
       color: $accent-color;
@@ -64,11 +65,11 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
-  background-color: $secondary-color;
+  background-color: $background-dark-color;
 
   &__title {
     margin: 1rem;
-    color: $primary-color;
+    color: $muted-text-color;
     text-align: center;
   }
 
